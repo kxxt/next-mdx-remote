@@ -62,5 +62,6 @@ export async function serialize(
     frontmatter:
       (vfile.data.matter as Record<string, string> | undefined) ?? {},
     scope,
+    data: vfile.data as Record<string, unknown>,
   }
 }

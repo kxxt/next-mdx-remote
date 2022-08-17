@@ -22,7 +22,8 @@ export interface SerializeOptions {
  */
 export type MDXRemoteSerializeResult<
   TScope = Record<string, unknown>,
-  TFrontmatter = Record<string, string>
+  TFrontmatter = Record<string, string>,
+  TData = Record<string, unknown>
 > = {
   /**
    * The compiledSource, generated from next-mdx-remote/serialize
@@ -39,4 +40,8 @@ export type MDXRemoteSerializeResult<
    * If parseFrontmatter was set to true, contains any parsed frontmatter found in the MDX source.
    */
   frontmatter?: TFrontmatter
+  /**
+   * VFile.data, some remark plugins may provide additional data here.
+   */
+  data: TData
 }
